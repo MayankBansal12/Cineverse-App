@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./header.scss";
 import { useNavigate } from 'react-router-dom';
-import SearchIcon from '@mui/icons-material/Search';
+import { Search, Foundation, LightbulbCircle, Explore, FilterList, Twitter, GitHub, Drafts, SettingsPhone } from '@mui/icons-material';
 
 const Header = () => {
   const [query,setQuery]=useState("");
@@ -47,7 +47,8 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container">
       <a className="navbar-brand" href="#">
-        <h4 className="logo">SeedCode!</h4>
+        <h4 className="logo">CineVerse</h4>
+        {/* <img src="placeholder-logo.png" alt="Logo" /> */}
       </a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -55,12 +56,16 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbar">
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
+            <Foundation />
             <a className="nav-link" href="/">Home</a>
           </li>
           <li className="nav-item">
+            {/* <FilterList /> */}
+            <Explore />
             <a className="nav-link" href="/explore">Explore</a>
           </li>
           <li className="nav-item">
+            <LightbulbCircle />
             <a className="nav-link" href="/about">About</a>
           </li>
         </ul>
@@ -72,7 +77,7 @@ const Header = () => {
           onKeyUp={showsearchResults}
           value={query}
         />
-        <button type="submit" onClick={showsearchResults} className="btn btn-outline-dark my-2 my-sm-0"><SearchIcon /></button>
+        <button type="submit" onClick={showsearchResults} className="btn btn-outline-dark my-2 my-sm-0"><Search /></button>
       </div>
         {/* <div>
           <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />

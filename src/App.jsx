@@ -1,10 +1,9 @@
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/HomePage/Home";
 import NotFound from "./components/NotFound/NotFound";
-import Header from "./components/Header/header";
-import Footer from "./components/Footer/footer";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Search from "./components/Search/Search";
 import ExplorePage from "./components/Explore Page/ExplorePage";
 import About from "./components/About/About";
