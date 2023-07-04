@@ -6,7 +6,6 @@ import { Twitter, GitHub, Drafts, SettingsPhone } from '@mui/icons-material';
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container">
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
             <h4>About</h4>
@@ -41,7 +40,6 @@ const Footer = () => {
             <p className="text-center">© 2023 CineVerse. All rights reserved.</p>
           </Grid>
         </Grid>
-      </div>
     </footer>
   );
 };

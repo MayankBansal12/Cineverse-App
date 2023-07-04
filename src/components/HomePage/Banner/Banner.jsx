@@ -30,21 +30,22 @@ const Banner = () => {
         { !loading && <div className="background-image">
             <LazyLoadImage src={background} />
         </div> }
+      <div className="opacity-layer"></div>
       <div className="banner-content">
         <span className="title">What would you watch today?</span>
         <span className="subtitle">
           Limitless tv shows, movies waiting for you. Explore Now.
         </span>
-      </div>
-      <div className="search-btn">
-        <input
-          type="search"
-          placeholder="Search for movies, tv shows, people"
-          onChange={(event) => setQuery(event.target.value)}
-          onKeyUp={showsearchResults}
-          value={query}
-        />
-        <button onClick={showsearchResults}><SearchIcon /></button>
+        <div className="search-btn">
+          <input
+            type="search"
+            placeholder="Search for movies, tv shows, people"
+            onChange={(event) => setQuery(event.target.value)}
+            onKeyUp={showsearchResults}
+            value={query}
+          />
+          <button onClick={showsearchResults}><SearchIcon /></button>
+        </div>
       </div>
     </div>
   );

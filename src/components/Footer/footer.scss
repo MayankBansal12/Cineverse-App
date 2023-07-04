@@ -1,6 +1,6 @@
 .footer {
     background: linear-gradient(-15deg, midnightblue, black);
-    color: #ffbf49;
+    color: var(--text-color);
     padding: 2rem 1rem 1rem;
     margin: 0 auto;
     width: 100vw;
@@ -9,7 +9,7 @@
     .container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 15px;
+        padding: 0 1rem;
     }
 
     .row {
@@ -33,7 +33,7 @@
     }
 
     hr {
-        border-top: 1px solid #ddd;
+        border-top: 3px dotted var(--highlight-color);
         margin: 20px 0;
     }
 
@@ -58,10 +58,10 @@
         a {
             text-decoration: none;
             margin-left: 0.5rem;
-            color: orange;
-
+            color: var(--text-color);
+            
             &:hover {
-                color: #ffbf49;
+                color: var(--highlight-color);
             }
         }
     }
@@ -72,10 +72,10 @@
 
         .icon-link {
             margin-inline: 0.5rem;
-            color: orange;
+            color: var(--text-color);
 
             &:hover {
-                color: #ffbf49;
+                color: var(--highlight-color);
             }
         }
     }
