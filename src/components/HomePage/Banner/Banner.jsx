@@ -11,10 +11,10 @@ const Banner = () => {
   const [background, setBackground] = useState("");
   const { data, loading } = useFetch("/movie/upcoming");
   const navigate = useNavigate();
-  const url = useSelector((state) => state.home.urls);
+  const url = useSelector((state) => state.home.urls);  
 
   useEffect(() => {
-    const randomNum = Math.floor(Math.random() * 20);
+    let randomNum = Math.floor(Math.random() * 20);
     const bgImage = url.backdrop + data?.results?.[randomNum]?.backdrop_path;
     setBackground(bgImage);
   }, [data]);
@@ -24,7 +24,11 @@ const Banner = () => {
       navigate(`/search/${query}`);
     }
   };
-
+  const navigateSearch=()=>{
+    if (query.length > 0) {
+      navigate(`/search/${query}`);
+    }
+  }
   return (
     <div className="banner">
         { !loading && <div className="background-image">
@@ -44,7 +48,7 @@ const Banner = () => {
             onKeyUp={showsearchResults}
             value={query}
           />
-          <button onClick={showsearchResults}><SearchIcon /></button>
+          <button onClick={navigateSearch}><SearchIcon /></button>
         </div>
       </div>
     </div>
