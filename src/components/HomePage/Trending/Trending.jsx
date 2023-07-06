@@ -3,9 +3,9 @@ import MovieItems from "../../Movie Items/Movie Items";
 import useFetchApi from "../../../hooks/useFetchApi";
 
 const Popular = () => {
-  const [selectedOption, setSelectedOption] = useState("movie");
+  const [selectedOption, setSelectedOption] = useState("week");
   
-  const {data, loading}=useFetchApi(`/${selectedOption}/popular`);
+  const {data, loading}=useFetchApi(`/trending/all/${selectedOption}`);
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -13,15 +13,15 @@ const Popular = () => {
 
   return (
     <div className="movies-section">
-      <h3>Current Favourites</h3>
+      <h3>What's Buzzing?</h3>
       <div className="sort-items">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6">
               <select className="custom-select" id="selectOption"
                 value={selectedOption} onChange={handleSelectChange} >
-                <option value="movie">Sort By Movies</option>
-                <option value="tv">Sort By TV Shows</option>
+                <option value="week">Sort By Week</option>
+                <option value="day">Sort By Day</option>
               </select>
             </div>
           </div>

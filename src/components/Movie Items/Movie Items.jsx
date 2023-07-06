@@ -17,14 +17,14 @@ const MovieItems = ({data, loading}) => {
   )
 
   return (
-    <div className="container movies-section">
+    <div className="container movies-container">
     { !loading ? (
         <div className="row">
           {data?.map((item)=>(
             <div className="col-lg-3 col-md-4 col-sm-6" key={item.id}>
               <div className="movie-item">
                 <img src={url?.poster + item.poster_path} alt={item.title || item.original_name + "poster"} className="img-fluid" />
-                <h4 className="movie-title">{(item.title || item.original_name).length < 20 ? (item.title || item.original_name):(item.title || item.original_name).substring(0,20)+"..."}</h4>
+                <h4 className="movie-title">{item.title || item.original_name}</h4>
                 <p className="release-date">{item.release_date || item.first_air_date}</p>
                 <p className="ratings" style={{border: `4px solid ${item.vote_average>7?"green": item.vote_average>4?"orange":"red"}`}}>{item.vote_average.toFixed(1)}</p>
               </div>

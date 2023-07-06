@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import MovieItems from "../../Movie Items/Movie Items";
 import useFetchApi from "../../../hooks/useFetchApi";
 
-const Popular = () => {
+const TopRated = () => {
   const [selectedOption, setSelectedOption] = useState("movie");
   
-  const {data, loading}=useFetchApi(`/${selectedOption}/popular`);
+  const {data, loading}=useFetchApi(`/${selectedOption}/top_rated`);
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -13,7 +13,7 @@ const Popular = () => {
 
   return (
     <div className="movies-section">
-      <h3>Current Favourites</h3>
+      <h3>Timeless Beauties</h3>
       <div className="sort-items">
         <div className="container">
           <div className="row justify-content-center">
@@ -32,4 +32,4 @@ const Popular = () => {
   )
 }
 
-export default Popular;
+export default TopRated;

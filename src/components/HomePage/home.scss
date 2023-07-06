@@ -1,4 +1,4 @@
-.popular-section{
+.movies-section{
     background: linear-gradient(-60deg, midnightblue, #080833 50%);
     color: var(--text-color);
     padding: 2rem;
@@ -49,14 +49,13 @@
 }
 
 
-
 @media screen and (max-width: 1024px) {
-    .popular-section .custom-select{
+    .movies-section .custom-select{
         right: 2rem;
     }
 }
 @media screen and (max-width: 768px) {
-    .popular-section{
+    .movies-section{
         h3{
             margin: 0 0 5rem 0;
             &::after{
@@ -70,7 +69,7 @@
     } 
 }
 @media screen and (max-width: 500px) {
-    .popular-section{
+    .movies-section{
         padding-top: 1rem;
         
         .custom-select{
