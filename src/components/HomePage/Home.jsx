@@ -1,12 +1,13 @@
 import React from 'react';
 import "./home.scss";
 import Banner from './Banner/Banner';
+import Popular from './Popular/Popular';
 
 const Home = () => {
   return (
     <>
       <Banner />
-      <div style={{height: "1000px", background: "midnightblue"}}></div>
+      <Popular />
     </>
   )
 }

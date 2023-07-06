@@ -67,7 +67,7 @@
             height: 3.5rem;
             border-radius: 1rem;
             border: none;
-            padding-inline: 1rem;
+            padding-inline: 1rem 4rem;
             outline: none;
             box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.4);
         }
@@ -105,13 +105,24 @@
 }
 
 @media screen and (max-width: 768px) {
-    .header .search-query svg{
-        right: 25px;
-    }
+    .header .search-query{
+        input{
+            padding-inline: 1rem 2.5rem;
+            height: 3rem;
+        }
+        svg{
+            right: 25px;
+        }
+    } 
 }
 @media screen and (max-width: 420px) {
-    .header .search-query svg{
-        top: 17px;
-        right: 17px;
-    }
+    .header .search-query{
+        input{
+            height: 2.75rem;
+        }
+        svg {
+            top: 12px;
+            right: 20px;
+        }
+    } 
 }

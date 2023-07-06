@@ -1,0 +1,32 @@
+.popular-section{
+    background: linear-gradient(0deg, midnightblue, #080833 100%);
+    color: var(--text-color);
+    padding: 2rem;
+
+    h3{
+        text-align: start;
+        position: relative;
+        margin-block: 1rem 3rem;
+
+        &::after{
+            content: "";
+            position: absolute;
+            background: linear-gradient(-45deg, midnightblue, orange);
+            height: 0.25rem;
+            width: 8rem;
+            top: 2.75rem;
+            left: 4rem;
+            border-radius: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .popular-section{
+        h3{
+            &::after{
+                left: 3rem;
+            }
+        }
+    }
+}

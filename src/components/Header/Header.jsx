@@ -18,7 +18,9 @@ const Header = () => {
   },[location]);
 
   const handleScroll=()=>{
-    if(window.scrollY>550){
+    if(window.scrollY>500){
+      showSearch(false);
+      
       if(window.scrollY > Yscroll){
         setShow("hide");
       }else{
@@ -78,13 +80,13 @@ const Header = () => {
           </div>
 
           <div className="search-btn search">
-            <button type="submit" className="btn btn-outline-dark">
-              <Search onClick={()=>{
+            <button type="submit" className="btn btn-outline-dark" onClick={()=>{
                 showSearch(true)
                 const toggle=document.querySelector("#navbarnav");
                 toggle.classList.remove("show");
                 setArrowDown(false);
-              }} />
+              }} >
+              <Search />
             </button>
           </div>
 
