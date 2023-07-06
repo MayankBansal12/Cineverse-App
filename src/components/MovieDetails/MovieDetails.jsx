@@ -3,7 +3,7 @@ import "./movieDetails.scss"
 
 const MovieDetails = () => {
   return (
-    <div>
+    <div style={{height: "1000px", background: "midnightblue"}}>
       Movie Details
     </div>
   )

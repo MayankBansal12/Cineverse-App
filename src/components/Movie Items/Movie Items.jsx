@@ -1,10 +1,12 @@
 import React from "react";
 import "./movieItems.scss";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const MovieItems = ({data, loading}) => {
 
   const url = useSelector((state) => state.home.urls);
+  const navigate=useNavigate();
 
   const animationItem=()=>(
     <div className="animationItem">
@@ -22,7 +24,9 @@ const MovieItems = ({data, loading}) => {
         <div className="row">
           {data?.map((item)=>(
             <div className="col-lg-3 col-md-4 col-sm-6" key={item.id}>
-              <div className="movie-item">
+              <div className="movie-item" onClick={()=>{
+                navigate(`/movie/${item.id}`);
+              }}>
                 <img src={url?.poster + item.poster_path} alt={item.title || item.original_name + "poster"} className="img-fluid" />
                 <h4 className="movie-title">{item.title || item.original_name}</h4>
                 <p className="release-date">{item.release_date || item.first_air_date}</p>
