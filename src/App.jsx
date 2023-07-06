@@ -7,14 +7,14 @@ import Footer from "./components/Footer/Footer";
 import Search from "./components/Search/Search";
 import ExplorePage from "./components/Explore Page/ExplorePage";
 import About from "./components/About/About";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import useFetch from "./hooks/useFetchApi";
+import useFetchApi from "./hooks/useFetchApi";
 import { getUrls } from "./app/homeSlice";
 
 function App() {
   const dispatch = useDispatch();
-  const { data } = useFetch("/configuration");
+  const { data } = useFetchApi("/configuration");
 
   useEffect(() => {
     if (data) {
