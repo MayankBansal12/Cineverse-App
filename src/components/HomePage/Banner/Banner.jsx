@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./banner.scss";
-import useFetch from "../../../hooks/useFetchApi";
+import useFetchApi from "../../../hooks/useFetchApi";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LazyLoadImage from "../../LazyLoadImage/ImageEffect";
@@ -9,7 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 const Banner = () => {
   const [query, setQuery] = useState("");
   const [background, setBackground] = useState("");
-  const { data, loading } = useFetch("/movie/upcoming");
+  const { data, loading } = useFetchApi("/movie/upcoming");
   const navigate = useNavigate();
   const url = useSelector((state) => state.home.urls);
 

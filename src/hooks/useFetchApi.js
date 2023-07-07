@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { apiFetch } from "../utils/api";
 
-const useFetch=(endpoint)=>{
+const useFetchApi=(endpoint)=>{
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState("");
     const [error, setError]= useState("");
@@ -23,4 +23,4 @@ const useFetch=(endpoint)=>{
     return {data, loading, error};
 };
 
-export default useFetch;
+export default useFetchApi;

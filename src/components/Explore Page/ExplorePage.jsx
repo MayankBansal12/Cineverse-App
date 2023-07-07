@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MovieItems from "../Movie Items/Movie Items";
-import useFetch from "../../hooks/useFetchApi";
+import useFetchApi from "../../hooks/useFetchApi";
 
 const ExplorePage = () => {
   
   const {type}=useParams();
-  const {data, loading}=useFetch(`/${type}/top_rated`);
+  const {data, loading}=useFetchApi(`/${type}/top_rated`);
 
   return (
     <div className="explore movies-section">
