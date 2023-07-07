@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieItems from "../../Movie Items/Movie Items";
 import useFetchApi from "../../../hooks/useFetchApi";
 
-const Popular = () => {
+const Trending = () => {
   const [selectedOption, setSelectedOption] = useState("week");
   
   const {data, loading}=useFetchApi(`/trending/all/${selectedOption}`);
@@ -32,4 +32,4 @@ const Popular = () => {
   )
 }
 
-export default Popular;
+export default Trending;

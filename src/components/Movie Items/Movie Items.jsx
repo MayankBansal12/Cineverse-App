@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
-const MovieItems = ({ data, loading }) => {
+const MovieItems = ({ data, loading, type }) => {
   const url = useSelector((state) => state.home.urls);
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const MovieItems = ({ data, loading }) => {
               <div
                 className="movie-item"
                 onClick={() => {
-                  navigate(`/${item.media_type || "movie"}/${item.id}`);
+                  navigate(`/${item.media_type || type}/${item.id}`);
                 }}
               >
                 <img

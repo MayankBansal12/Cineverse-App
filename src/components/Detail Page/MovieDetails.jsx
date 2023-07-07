@@ -6,6 +6,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useSelector } from 'react-redux';
 import dayjs from "dayjs";
 import Skeleton from 'react-loading-skeleton';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 const MovieDetails = () => {
   const { type, id } = useParams();
@@ -16,8 +17,8 @@ const MovieDetails = () => {
   const date = data?.release_date || data?.first_air_date;
 
   return (
-      <div className="container">
-    <div className="movie-details">
+    <div className="container">
+      <div className="movie-details">
         {!loading ? (
           <>
             <div className="movie-poster">
@@ -40,9 +41,43 @@ const MovieDetails = () => {
               </div>
               {data.tagline && <p className="tagline">{data.tagline}</p>}
               <p className="overview">{data.overview}</p>
+              <button type="button" className="btn btn-primary mx-auto d-block watch-btn"><PlayCircleOutlineIcon /> Watch it!</button>
+              <div className="other-info">
+                {data.status && (
+                    <div className="info-item">
+                        <span className="bold">
+                            Status:{" "}
+                        </span>
+                        <span className="light">
+                            {data.status}
+                        </span>
+                    </div>
+                )}
+                {date && (
+                    <div className="info-item">
+                        <span className="bold">
+                            Release Date:{" "}
+                        </span>
+                        <span className="light">
+                            {dayjs(date).format("MMM D YYYY")}
+                        </span>
+                    </div>
+                )}
+                {data.runtime && (
+                    <div className="info-item">
+                        <span className="bold">
+                            Run Time:{" "}
+                        </span>
+                        <span className="light">
+                            {data.runtime}min
+                        </span>
+                    </div>
+                )}
+              </div>
             </div>
           </>
         ) : (
+          // Loading Animation
           <div className="loading-skeleton">
             <Skeleton height={400} />
             <div className="movie-content">
@@ -53,7 +88,6 @@ const MovieDetails = () => {
             </div>
           </div>
         )}
-
       </div>
     </div>
   )

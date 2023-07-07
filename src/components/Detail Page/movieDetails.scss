@@ -39,6 +39,7 @@
         }
         .genres{
             margin-top: -10%;
+            min-height: 2rem;
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
@@ -76,6 +77,30 @@
             text-align: start;
             font-size: 1.1rem;
             line-height: 1.75;
+        }
+        .watch-btn{
+            background-color: transparent;
+            color: var(--text-color);
+            max-width: 300px;
+            width: 50vw;
+            border: 3px solid;
+            font-weight: bold;
+            padding: 1rem;
+            box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+
+            &:hover{
+                background-color: var(--text-color);
+                color: var(--first-color);
+                font-weight: normal;
+                transform: scale(1.05);
+            }
+        }
+        .other-info{
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
         }
     }
 }

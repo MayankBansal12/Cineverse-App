@@ -27,7 +27,7 @@ const Popular = () => {
           </div>
         </div>
       </div>
-      <MovieItems data={data?.results} loading={loading} />
+      <MovieItems data={data?.results} loading={loading}  type={selectedOption} />
     </div>
   )
 }
