@@ -17,7 +17,7 @@ const MovieItems = ({ data, loading }) => {
               <div
                 className="movie-item"
                 onClick={() => {
-                  navigate(`/${item.media_type}/${item.id}`);
+                  navigate(`/${item.media_type || "movie"}/${item.id}`);
                 }}
               >
                 <img
