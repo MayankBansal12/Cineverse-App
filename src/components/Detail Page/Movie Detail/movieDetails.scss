@@ -8,6 +8,8 @@
     .movie-poster {
         width: 350px;
         max-height: 500px;
+        overflow: hidden;
+        border-radius: 0.5rem;
         text-align: start;
         box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.5);
         position: sticky;
@@ -42,7 +44,6 @@
         }
         .genres{
             margin-top: -10%;
-            min-height: 2rem;
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;

@@ -12,7 +12,7 @@ const Banner = () => {
   const [background, setBackground] = useState("");
   const { data, loading } = useFetchApi("/movie/upcoming");
   const navigate = useNavigate();
-  const url = useSelector((state) => state.home.urls);
+  const url = useSelector((state) => state?.home?.urls);
 
   useEffect(() => {
     let randomNum = Math.floor(Math.random() * 20);
