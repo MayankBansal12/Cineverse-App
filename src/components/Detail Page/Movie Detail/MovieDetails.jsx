@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import "./movieDetails.scss"
 import { useParams } from 'react-router-dom';
 import useFetchApi from '../../../hooks/useFetchApi';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useSelector } from 'react-redux';
 import dayjs from "dayjs";
 import Skeleton from 'react-loading-skeleton';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-import Video from '../Video PopUp/Video';
+import Popup from '../Video PopUp/Popup';
+import LazyLoadImage from "../../LazyLoadImage/ImageEffect";
 import placeholder from  "../../../assets/poster-placeholder.jpg";
 
 const MovieDetails = ({ video, crew }) => {
@@ -47,7 +47,7 @@ const MovieDetails = ({ video, crew }) => {
               </div>
               {data.tagline && <p className="tagline">{data.tagline}</p>}
               <p className="overview">{data.overview}</p>
-              <button type="button" className="btn btn-primary mx-auto d-flex justify-content-center watch-btn" onClick={()=>setShowPopup(true)}><PlayCircleOutlineIcon /> Watch it!</button>
+              <button type="button" className="btn btn-primary mx-auto d-flex justify-content-center watch-btn" onClick={()=>setShowPopup(true)}><PlayCircleOutlineIcon /> Watch Promo!</button>
               
               <div className="other-info">
                 {data.status && (
@@ -150,7 +150,7 @@ const MovieDetails = ({ video, crew }) => {
             </div>
           </div>
         )}
-        <Video showPopup={showPopup} setShowPopup={setShowPopup} videoId={video?.key} />
+        <Popup showPopup={showPopup} setShowPopup={setShowPopup} videoId={video?.key} />
       </div>
     </div>
   )

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
-import "./Video.scss";
+import "./popup.scss";
 
-const Video = ({ videoId, showPopup, setShowPopup }) => {
+const Popup = ({ videoId, showPopup, setShowPopup }) => {
   
   const handleTogglePopup = () => {
     setShowPopup(!showPopup);
@@ -28,4 +28,4 @@ const Video = ({ videoId, showPopup, setShowPopup }) => {
   );
 };
 
-export default Video;
+export default Popup;
