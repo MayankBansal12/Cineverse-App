@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LazyLoadImage from "../../LazyLoadImage/ImageEffect";
 import SearchIcon from '@mui/icons-material/Search';
+import placeholder from "../../../assets/banner-placeholder.jpeg"
 
 const Banner = () => {
   const [query, setQuery] = useState("");
@@ -16,7 +17,7 @@ const Banner = () => {
   useEffect(() => {
     let randomNum = Math.floor(Math.random() * 20);
     const bgImage = url.backdrop + data?.results?.[randomNum]?.backdrop_path;
-    setBackground(bgImage);
+    setBackground(bgImage ? bgImage : placeholder);
   }, [data]);
 
   const showsearchResults = (event) => {
@@ -32,7 +33,7 @@ const Banner = () => {
   return (
     <div className="banner">
         { !loading && <div className="background-image">
-            <LazyLoadImage src={background} />
+            <LazyLoadImage src={background} alt="background" />
         </div> }
       <div className="opacity-layer"></div>
       <div className="banner-content">

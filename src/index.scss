@@ -40,7 +40,7 @@ body {
   display: flex;
   place-items: center;
   min-height: 100vh;
-  background: var(--background-gradient);
+  background: linear-gradient(200deg, black 15%, midnightblue 150%);
 }
 
 a {

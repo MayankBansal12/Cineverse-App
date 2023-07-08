@@ -8,12 +8,13 @@ import dayjs from "dayjs";
 import Skeleton from 'react-loading-skeleton';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import Video from '../Video PopUp/Video';
+import placeholder from  "../../../assets/poster-placeholder.jpg";
 
 const MovieDetails = ({ video, crew }) => {
   const { type, id } = useParams();
   const { data, loading } = useFetchApi(`/${type}/${id}`);
   const url = useSelector((state) => state.home.urls);
-  const bgImage = url.backdrop + data.poster_path;
+  const bgImage = data.poster_path ? url.backdrop + data.poster_path : placeholder;
   const genres = data?.genres?.map(genre => genre);
   const date = data?.release_date || data?.first_air_date;
   const director = crew?.filter(item => item.job === "Director");
@@ -27,7 +28,7 @@ const MovieDetails = ({ video, crew }) => {
         {!loading ? (
           <>
             <div className="movie-poster">
-              <LazyLoadImage src={bgImage} />
+              <LazyLoadImage src={bgImage} alt={"poster"} />
             </div>
             <div className="movie-content">
               <h4 className="movie-title">{data.title || data.original_name}</h4>

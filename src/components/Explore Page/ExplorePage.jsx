@@ -12,7 +12,7 @@ const ExplorePage = () => {
   return (
     <div className="explore movies-section">
       <h3>Explore {type==="tv"?"TV Shows":"Movies"}</h3>
-      <MovieItems data={data?.results} loading={loading} />
+      <MovieItems data={data?.results} loading={loading} type={type} />
     </div>
   )
 }
