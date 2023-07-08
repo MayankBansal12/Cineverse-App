@@ -1,0 +1,14 @@
+.search-results{
+    margin-block: 5rem 1rem;
+    min-height: 100vh;
+    color: var(--text-color);
+
+    .heading{
+        padding-block: 2rem;
+        color: white;
+        font-size: 1.3rem;
+    }
+    .scroll{
+        padding-top: 1rem;
+    }
+}

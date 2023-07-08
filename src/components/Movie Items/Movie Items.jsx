@@ -25,7 +25,7 @@ const MovieItems = ({ data, loading, type }) => {
                 <LazyLoadImage src={item.poster_path ? url?.poster + item.poster_path : placeholder}
                   alt={item.title || item.original_name + "poster"}
                   className="img-fluid" />
-                <h4 className="movie-title">{item.title || item.original_name}</h4>
+                <h4 className="movie-title">{item.title || item.name}</h4>
                 <p className="release-date">{item.release_date || item.first_air_date}</p>
                 <p
                   className="ratings"
@@ -35,7 +35,7 @@ const MovieItems = ({ data, loading, type }) => {
                     }`,
                   }}
                 >
-                  {item.vote_average.toFixed(1)}
+                  {item.vote_average?.toFixed(1) || 0}
                 </p>
               </div>
             </div>

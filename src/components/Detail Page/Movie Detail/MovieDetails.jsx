@@ -31,7 +31,7 @@ const MovieDetails = ({ video, crew }) => {
               <LazyLoadImage src={bgImage} alt={"poster"} />
             </div>
             <div className="movie-content">
-              <h4 className="movie-title">{data.title || data.original_name}</h4>
+              <h4 className="movie-title">{data.title || data.name}</h4>
               <div className="movie-essentials">
                 <p className="release-date">{dayjs(date).format("YYYY")}</p>
                 <p className="movie-ratings" style={

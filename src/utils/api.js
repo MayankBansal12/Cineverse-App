@@ -2,6 +2,7 @@ import axios from "axios";
 
 const baseURL=import.meta.env.VITE_APP_BASE_URL;
 const tmdbToken=import.meta.env.VITE_APP_TMDB_TOKEN;
+
 const headers={
     Authorization: "bearer "+ tmdbToken,
 }

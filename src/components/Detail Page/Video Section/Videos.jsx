@@ -12,9 +12,9 @@ const Video = ({ videos, loading }) => {
 
   return (
     <div className="video-container">
-      {videos && (
+      {videos && videos?.length>0 && (
         <>
-          <h4 className="video-heading">Videos</h4>
+          <h4 className="video-heading">Related Videos</h4>
           {loading ? (
             <div className="skeleton-wrapper">
               <Skeleton width={150} height={100} />

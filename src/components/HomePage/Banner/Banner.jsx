@@ -16,18 +16,20 @@ const Banner = () => {
 
   useEffect(() => {
     let randomNum = Math.floor(Math.random() * 20);
-    const bgImage = url.backdrop + data?.results?.[randomNum]?.backdrop_path;
+    const bgImage = url?.backdrop + data?.results?.[randomNum]?.backdrop_path;
     setBackground(bgImage ? bgImage : placeholder);
   }, [data]);
 
   const showsearchResults = (event) => {
     if (event.key === "Enter" && query.length > 0) {
       navigate(`/search/${query}`);
+      setQuery("");
     }
   };
   const navigateSearch=()=>{
     if (query.length > 0) {
       navigate(`/search/${query}`);
+      setQuery("");
     }
   }
   return (
@@ -44,7 +46,7 @@ const Banner = () => {
         <div className="search-btn">
           <input
             type="search"
-            placeholder="Search for movies, tv shows, people"
+            placeholder="Search for any movies & tv shows"
             onChange={(event) => setQuery(event.target.value)}
             onKeyUp={showsearchResults}
             value={query}

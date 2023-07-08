@@ -43,6 +43,7 @@ const Header = () => {
     if (event.key === "Enter" && query.length > 0) {
       showSearch(false);
       navigate(`/search/${query}`);
+      setQuery("");
     }
   };
 

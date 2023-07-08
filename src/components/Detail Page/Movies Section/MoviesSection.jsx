@@ -26,7 +26,7 @@ const MoviesSection = ({ heading, data, loading, type }) => {
                 alt={item.title || item.original_name + "poster"}
                 className="movie-poster"
               />
-              <h4 className="moviesection-title">{item.title || item.original_name}</h4>
+              <h4 className="moviesection-title">{item.title || item.name}</h4>
               <p className="release-date">{item.release_date || item.first_air_date}</p>
               <p
                 className="movie-ratings"

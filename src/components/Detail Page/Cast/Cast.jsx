@@ -10,29 +10,33 @@ const Cast = ({ cast, loading }) => {
 
   return (
     <div className="cast-container">
-      <h4 className="cast-heading">Cast Members</h4>
-      {loading ? (
-        <div className="skeleton-wrapper">
-          <Skeleton circle width={100} height={100} />
-          <Skeleton width={150} height={20} />
-          <Skeleton width={100} height={20} />
-        </div>
-      ) : (
-        <div className="cast-row">
-          {cast?.map((actor) => (
-            <div className="cast-item" key={actor.id}>
-              <>
-                <div className="cast-image">
-                    <LazyLoadImage src={actor.profile_path ? url.profile + actor.profile_path : placeholder} alt={actor.name}  className="cast-photo"/>
-                </div>
-                <div className="cast-details">
-                  <h5 className="cast-name">{actor.name}</h5>
-                  <p className="cast-character">{actor.character}</p>
-                </div>
-              </>
+      {cast && cast?.length > 0 && (
+        <>
+          <h4 className="cast-heading">Cast Members</h4>
+          {loading ? (
+            <div className="skeleton-wrapper">
+              <Skeleton circle width={100} height={100} />
+              <Skeleton width={150} height={20} />
+              <Skeleton width={100} height={20} />
             </div>
-          ))}
-        </div>
+          ) : (
+            <div className="cast-row">
+              {cast?.map((actor) => (
+                <div className="cast-item" key={actor.id}>
+                  <>
+                    <div className="cast-image">
+                      <LazyLoadImage src={actor.profile_path ? url.profile + actor.profile_path : placeholder} alt={actor.name} className="cast-photo" />
+                    </div>
+                    <div className="cast-details">
+                      <h5 className="cast-name">{actor.name}</h5>
+                      <p className="cast-character">{actor.character}</p>
+                    </div>
+                  </>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
       )}
     </div>
   );
