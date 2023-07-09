@@ -59,7 +59,6 @@ const Header = () => {
         <div className="container d-flex justify-content-between align-items-center">
           <a className="navbar-brand" href="/">
             <h4 className="logo">CineVerse</h4>
-            {/* <img src="placeholder-logo.png" alt="Logo" /> */}
           </a>
 
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarnav" aria-controls="navbarnav" aria-expanded="false" aria-label="Toggle navigation" onClick={() => setArrowDown(!arrowDown)}>
@@ -98,7 +97,7 @@ const Header = () => {
       { search && <div className="search-query">
           <input
             type="text"
-            placeholder="Search for movies, tv shows, people"
+            placeholder="Search for any movie & tv shows"
             onChange={(event) => setQuery(event.target.value)}
             onKeyUp={showsearchResults}
             value={query}
