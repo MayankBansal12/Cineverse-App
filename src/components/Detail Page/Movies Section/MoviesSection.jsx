@@ -27,14 +27,14 @@ const MoviesSection = ({ heading, data, loading, type }) => {
                 className="movie-poster"
               />
               <h4 className="moviesection-title">{item.title || item.name}</h4>
-              <p className="release-date">{item.release_date || item.first_air_date}</p>
+              <p className="release-date">{item.release_date || item.first_air_date || ""}</p>
               <p
                 className="movie-ratings"
                 style={{
                   border: `4px solid ${item.vote_average > 7 ? "green" : item.vote_average > 4 ? "orange" : "red"}`,
                 }}
               >
-                {item.vote_average.toFixed(1)}
+                {item.vote_average.toFixed(1) || 0}
               </p>
             </div>
           ))}

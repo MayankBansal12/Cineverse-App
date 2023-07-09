@@ -16,7 +16,7 @@ const MovieDetails = ({ video, crew }) => {
   const url = useSelector((state) => state.home.urls);
   const bgImage = data.poster_path ? url.backdrop + data.poster_path : placeholder;
   const genres = data?.genres?.map(genre => genre);
-  const date = data?.release_date || data?.first_air_date;
+  const date = data?.release_date || data?.first_air_date || undefined;
   const director = crew?.filter(item => item.job === "Director");
   const writer = crew?.filter(item => item.job === "Screenplay" || item.job === "Story" || item.job === "Writer");
   const creator=data?.created_by;
@@ -33,16 +33,16 @@ const MovieDetails = ({ video, crew }) => {
             <div className="movie-content">
               <h4 className="movie-title">{data.title || data.name}</h4>
               <div className="movie-essentials">
-                <p className="release-date">{dayjs(date).format("YYYY")}</p>
+                <p className="release-date">{date && dayjs(date).format("YYYY")}</p>
                 <p className="movie-ratings" style={
                   { border: `4px solid ${data.vote_average > 7 ? "green" : data.vote_average > 4 ? "orange" : "red"}` }
                 } >
-                  {data.vote_average.toFixed(1)}
+                  {data.vote_average.toFixed(1) || 0}
                 </p>
               </div>
               <div className="genres">
                 {genres?.map(genre => (
-                  <p className="genre-name" key={genre.id}>{genre.name}</p>
+                  <p key={genre.id} className="genre-name">{genre.name}</p>
                 ))}
               </div>
               {data.tagline && <p className="tagline">{data.tagline}</p>}
