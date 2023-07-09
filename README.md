@@ -11,7 +11,7 @@ The CineVerse App is a movie database site that fetches information from the TMD
 
 ## Technologies Used
    - React
-   - JavaScript
+   - JavaScript (nodejs)
    - TMDB API
    - SCSS
    - Bootstrap
@@ -37,9 +37,10 @@ For the website to work normally, you would need to login on to TMDB to generate
 
 ### API
 1. Obtain a TMDB API key and token:
-    - Sign up for an account on the (TMDB)[] website and fill out the required form.
+    - Sign up for an account on the TMDB website and fill out the required form.
     - Generate an API key and token in the account settings.
     - Copy the API key and token.
+![tmdb api](./SiteDemo/tmdb%20api.jpg)
 
 2. Configure the TMDB API key and token:
    - Create a `.env` file in the root directory of the project.
@@ -50,13 +51,58 @@ For the website to work normally, you would need to login on to TMDB to generate
   VITE_APP_TMDB_TOKEN=<your-token>
   VITE_APP_BASE_URL=<url mentioned along with API key>
   ```
+![example .env file](./SiteDemo/env.png)
+
 3. After updating the env file, restart the server and visit http://localhost:5173
 
 
-<!-- ## ScreenShots -->
+## Screenshots/Demo
+Watch site demo [here](https://clipchamp.com/watch/HQkgMLMnGOT)
+
+- **Header for the website**
+
+![navbar](./SiteDemo/Header.png)
+
+- **Trending Section: You can see all the content trending sort by week/day**
+
+![trending](./SiteDemo/Trending.png)
+
+- **By clicking on movie item, you will land on specific movie page displaying all details**
+
+![Movie Detail](./SiteDemo/detail.png)
+
+- **Cast and Related video for the movie**
+  
+![video](./SiteDemo/video.png)
+
+- **Recommandations section**
+  
+![recommandations](./SiteDemo/recommandations.png)
+
+- **You can also search for any movie, tv show you want to watch**
+  
+![Search](./SiteDemo/Search.png)
+
+- **Search Results**
+  
+![search result](./SiteDemo/Search%20Result.png)
+
+- **TopRated Section in homepage**
+  
+![toprated](./SiteDemo/TopRated.png)
+
+- **Explore Movies/ Explore Tv Shows**
+  
+![explore movie](./SiteDemo/exploremovie.png)
+![explore tv](./SiteDemo/exploretv.png)
+
+- **Footer Section**
+  
+![Footer](./SiteDemo/footer.png)
+
 
 ## Credits
-
+Resources that i used while working on this project:
 - ChatGPT by OpenAI
 - TMDB Documentation
 
