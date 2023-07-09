@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+// TopRated component is responsible for displaying toprated movies/tv show on homepage
+
+import React, { useState } from "react";
 import MovieItems from "../../Movie Items/Movie Items";
 import useFetchApi from "../../../hooks/useFetchApi";
 
 const TopRated = () => {
   const [selectedOption, setSelectedOption] = useState("movie");
-  
+ 
+  // Fetching popular movies or TV shows based on the selected option
   const {data, loading}=useFetchApi(`/${selectedOption}/top_rated`);
 
+  // Handle the change in the selected option
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };

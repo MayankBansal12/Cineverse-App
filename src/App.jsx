@@ -1,3 +1,6 @@
+// App.jsx - Main entry point of the CineVerse App
+// This file sets up the application routing and renders the header, footer, and different page components.
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/HomePage/Home";
 import Header from "./components/Header/Header";
@@ -9,13 +12,19 @@ import NotFound from "./components/NotFound/NotFound";
 import About from "./components/About/About";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+
+// Custom hook for fetching API data
 import useFetchApi from "./hooks/useFetchApi";
+
+// Redux action to store URLs
 import { getUrls } from "./app/homeSlice";
+
 
 function App() {
   const dispatch = useDispatch();
   const { data } = useFetchApi("/configuration");
 
+  // Fetch configuration data and set the URLs for image paths in the Redux store
   useEffect(() => {
     if (data) {
       const url = {

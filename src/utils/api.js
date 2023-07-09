@@ -6,6 +6,8 @@ const tmdbToken=import.meta.env.VITE_APP_TMDB_TOKEN;
 const headers={
     Authorization: "bearer "+ tmdbToken,
 }
+
+// To fetch the data from the api
 export const apiFetch=async(url,params)=>{
     try {
         const {data}=await axios.get(baseURL+url,{

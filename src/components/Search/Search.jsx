@@ -1,3 +1,5 @@
+// This component gets rendered after a query is being search for. Infinite Scrolling is also implemented in this component
+
 import React, { useEffect, useState } from 'react';
 import "./search.scss";
 import MovieItems from '../Movie Items/Movie Items';
@@ -11,6 +13,7 @@ const Search = () => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
 
+  // Fetch data for initial search
   const fetchData = () => {
     apiFetch(`/search/multi?query=${query}&page=${pageNum}`).then(res => {
       setData(res);
@@ -19,6 +22,7 @@ const Search = () => {
     });
   }
 
+  // Fetch data for next page when scrolling
   const fetchNextData = () => {
     apiFetch(`/search/multi?query=${query}&page=${pageNum}`).then(res => {
       if (data?.results) {
@@ -44,6 +48,7 @@ const Search = () => {
       {data?.results?.length > 0 ? (
         <>
           <div className="heading">{`Search Results for "${query}"`}</div>
+          {/* Infinite scrolling for loading more results */}
           <InfiniteScroll
             dataLength={data?.results?.length || []}
             next={fetchNextData}
@@ -51,7 +56,7 @@ const Search = () => {
             loader={<h4>Loading...</h4>}
             className="scroll"
           >
-            <MovieItems data={data.results} loading={loading}/>
+            <MovieItems data={data.results} loading={loading} />
           </InfiniteScroll>
         </>
       ) : (

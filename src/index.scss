@@ -1,5 +1,7 @@
+// Poppins Fonts from google fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap');
 
+// Set the root font and color scheme
 :root {
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
@@ -8,6 +10,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  // Define custom color variables
   --first-color: midnightblue;
   --text-color: #ffbf49;
   --highlight-color: orange;
@@ -19,22 +22,24 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
 #root {
   text-align: center;
   overflow: hidden;
 }
 
+// Reset default styles for all elements
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar{
+// Hide the scrollbar
+::-webkit-scrollbar {
   display: none;
 }
 
+// Set styles for the body and specific elements
 body {
   margin: 0;
   display: flex;
@@ -73,9 +78,12 @@ button {
     border-color: orange;
   }
 }
-.bold{
+
+// Additional custom classes for styling
+.bold {
   font-weight: bold;
 }
-.light{
+
+.light {
   color: #d7d0d0;
 }

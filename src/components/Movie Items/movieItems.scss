@@ -1,3 +1,4 @@
+// Styling the movie container and components inside it
 .movies-container{
     max-width: 1200px;
     margin: 0 auto;
@@ -47,7 +48,7 @@
     }
 }
 
-
+// Media Query
 @media screen and (max-width: 425px) {
     .movies-container{
         .movie-item{

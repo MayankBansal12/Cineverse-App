@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+// Trending.jsx displays all trending movies and tv shows sorted on basis of week or day
+
+import React, { useState } from "react";
 import MovieItems from "../../Movie Items/Movie Items";
 import useFetchApi from "../../../hooks/useFetchApi";
 
 const Trending = () => {
   const [selectedOption, setSelectedOption] = useState("week");
-  
+
+  // Fetching popular movies or TV shows based on the selected option
   const {data, loading}=useFetchApi(`/trending/all/${selectedOption}`);
 
+  // Handle the change in the selected option
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };

@@ -1,7 +1,9 @@
-import React from 'react';
-import './about.scss';
-import { Drafts } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+// About.jsx provides all the info about the project along with contact details
+
+import React from "react";
+import "./about.scss";
+import { Drafts } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -22,7 +24,7 @@ const About = () => {
         </ul>
 
         <h3>Get in Touch</h3>
-        <p>You can mail me at <Drafts /><Link className="email" to="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBptJQGXRhtBDKQrMSSBQSTpKJHXQDBCbfGrtBKSLFlmxgvsVkCZMGvnqcbrkMWtgDgcLrN" target="_blank">mayankbansal125@gmail.com</Link> or connect with any of the social media below.</p>
+        <p>You can mail me at <Drafts /><Link className="email" to="mailto:mayankbansal125@gmail.com">mayankbansal125@gmail.com</Link> or connect with any of the social media below.</p>
 
         <span className="disclaimer">Disclaimer: It is just a personal web project, not for commercial use.</span>
       </div>

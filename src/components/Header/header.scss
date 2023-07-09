@@ -8,6 +8,7 @@
         transition: all 0.3s ease;
         z-index: 10;
 
+        // Classes to be used while scrolling for navbar
         &.normal{
             background: rgba(25, 25, 112, 0.2);
         }
@@ -80,6 +81,7 @@
         }
     }
 
+    // Top Down Animation for navbar
     @keyframes topDown {
         0%{
             transform: translateY(-60px);
@@ -90,6 +92,7 @@
     }
 }
 
+// Media Queries
 @media screen and (max-width: 992px) {
     .header .navbar .container .navbar-nav{
         gap: 2rem;

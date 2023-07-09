@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+// The Popular component is responsible for displaying a section of popular movies or TV shows on the homepage
+
+import React, { useState } from "react";
 import MovieItems from "../../Movie Items/Movie Items";
 import useFetchApi from "../../../hooks/useFetchApi";
 
 const Popular = () => {
   const [selectedOption, setSelectedOption] = useState("movie");
   
-  const {data, loading}=useFetchApi(`/${selectedOption}/popular`);
+  // Fetching popular movies or TV shows based on the selected option
+  const { data, loading } = useFetchApi(`/${selectedOption}/popular`);
 
+  // Handle the change in the selected option
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -27,6 +31,8 @@ const Popular = () => {
           </div>
         </div>
       </div>
+
+      {/* Sending the data to movieItems for displaying all the movies */}
       <MovieItems data={data?.results} loading={loading}  type={selectedOption} />
     </div>
   )

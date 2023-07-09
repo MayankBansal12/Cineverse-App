@@ -1,3 +1,5 @@
+// 404 Page---gets displayed in case of mis spell in url
+
 import React from 'react';
 import './notFound.scss';
 import { Link } from 'react-router-dom';

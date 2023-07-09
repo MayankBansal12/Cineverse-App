@@ -1,3 +1,5 @@
+// This component is used to display all the related videos for any movie/tv 
+
 import React, { useState } from 'react';
 import './videos.scss';
 import LazyLoadImage from "../../LazyLoadImage/ImageEffect";
@@ -7,12 +9,16 @@ import placeholder from "../../../assets/banner-placeholder.jpeg";
 import Popup from '../Video PopUp/Popup';
 
 const Video = ({ videos, loading }) => {
-    const [showPopup, setShowPopup]=useState(false);
-    const [videoId,setVideoId]=useState(null);
+  // show popup only when clicked on button
+  const [showPopup, setShowPopup] = useState(false);
+
+  // stores video id for playing the video
+  const [videoId, setVideoId] = useState(null);
 
   return (
     <div className="video-container">
-      {videos && videos?.length>0 && (
+      {/* Renders only when videos are available for specific movie/show */}
+      {videos && videos?.length > 0 && (
         <>
           <h4 className="video-heading">Related Videos</h4>
           {loading ? (
@@ -23,10 +29,12 @@ const Video = ({ videos, loading }) => {
           ) : (
             <div className="video-row">
               {videos.map((video) => (
-                <div className="video-item" key={video.id} onClick={()=>{
-                    setShowPopup(true);
-                    setVideoId(video.key);
+                // Store the video id and display the video popup
+                <div className="video-item" key={video.id} onClick={() => {
+                  setShowPopup(true);
+                  setVideoId(video.key);
                 }}>
+                  {/* Fetches video thumbnail with the help of youtube */}
                   <>
                     <LazyLoadImage
                       src={video.key ? `https://i.ytimg.com/vi/${video.key}/hqdefault.jpg` : placeholder}
@@ -34,6 +42,7 @@ const Video = ({ videos, loading }) => {
                       effect="blur"
                       className="video-thumbnail"
                     />
+                    {/* Play button in the center */}
                     <div className="play-button">
                       <PlayCircleOutline />
                     </div>
@@ -45,6 +54,7 @@ const Video = ({ videos, loading }) => {
           )}
         </>
       )}
+      {/* Popup component for displaying video */}
       <Popup showPopup={showPopup} setShowPopup={setShowPopup} videoId={videoId} />
     </div>
   );

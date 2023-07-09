@@ -1,3 +1,5 @@
+// Banner.jsx is responsible for loading the banner in homepage
+
 import React, { useEffect, useState } from "react";
 import "./banner.scss";
 import useFetchApi from "../../../hooks/useFetchApi";
@@ -12,31 +14,39 @@ const Banner = () => {
   const [background, setBackground] = useState("");
   const { data, loading } = useFetchApi("/movie/upcoming");
   const navigate = useNavigate();
+  // base url for fetching banner image through api
   const url = useSelector((state) => state?.home?.urls);
 
   useEffect(() => {
+    // Generate a random number to select a backdrop image from the data
     let randomNum = Math.floor(Math.random() * 20);
     const bgImage = url?.backdrop + data?.results?.[randomNum]?.backdrop_path;
     setBackground(bgImage ? bgImage : placeholder);
   }, [data]);
 
   const showsearchResults = (event) => {
+    // Trigger search when "Enter" key is pressed
     if (event.key === "Enter" && query.length > 0) {
       navigate(`/search/${query}`);
       setQuery("");
     }
   };
-  const navigateSearch=()=>{
+
+  const navigateSearch = () => {
+    // Trigger search when search button is clicked
     if (query.length > 0) {
       navigate(`/search/${query}`);
       setQuery("");
     }
   }
+
   return (
     <div className="banner">
-        { !loading && <div className="background-image">
-            <LazyLoadImage src={background} alt="background" />
-        </div> }
+      {!loading && (
+        <div className="background-image">
+          <LazyLoadImage src={background} alt="background" />
+        </div>
+      )}
       <div className="opacity-layer"></div>
       <div className="banner-content">
         <span className="title">What would you watch today?</span>
