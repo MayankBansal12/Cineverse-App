@@ -24,7 +24,7 @@ Before you begin, ensure that you have the following software installed on your 
 - Node.js (version >= 14.x)
 - npm (Node Package Manager) 
 
-To run the ShopSense Ecommerce Project locally, follow these steps:
+To run the CineVerse App locally, follow these steps:
 
 ### Client
 
